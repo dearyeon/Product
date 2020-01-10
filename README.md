@@ -6,6 +6,7 @@
 
 팀별로 독립적이라는 전제 하에 하나의 레포에서 서로 다른 작업을 하는 것은 문제가 되지 않을 것입니다.  
 
+<br>
 
 ## 기본적으로 각 팀 디렉토리는 따로 존재합니다.
 
@@ -33,21 +34,33 @@ Git Ignore 파일도 따로 운용할 예정이며,
 
 빌드된 결과물을 올리지 않습니다. 즉, 소스 코드만 올리는 걸 목표로 합니다.
 
+<br>
 
 ## 기본적인 코딩 컨벤션
 
 > 기본적으로 정해진 팀 별 디렉토리명을 제외하고는 공동으로 사용합니다.
 
-- 디렉토리명은 snake_case => ex) product_scrap 
+- 디렉토리명은 snake_case
+    - product_scrap
+    - db_process
 
-- 파일명은 기본적으로 (camelCase).(기능 또는 없어도 됨).(확장자) => ex) productScrap.component.ts, mappingToSite.ts
+- 파일명은 기본적으로 (camelCase).(기능 또는 없어도 됨).(확장자)
+    - productScrap.component.ts
+    - mappingToSite.ts
+    - request.service.ts
 
-- 변수명은 snake_case => ex) `const num_arr : number[] = [1, 2, 3];`
+- 변수명은 snake_case
+    - `const num_arr : number[] = [1, 2, 3];`
 
-- 함수명은 camelCase => ex) `const addOne = (target: number) => target + 1;`
+- 함수명은 camelCase
+    - `const addOne = (target: number) => target + 1;`
+    - `function sqrtArr (arr : number[]) { ... }`
 
-- interface 또는 그외 유사한 선언형 사용 시에는 PascalCase => `type Target = 1; Interface ProducrInformation { ... }`
+- interface 또는 그외 유사한 선언형 사용 시에는 **PascalCase** 
+    - `type Target = 1;` 
+    - `Interface ProducrInformation { ... }`
 
+<br>
 
 ## 브랜치 관리
 
