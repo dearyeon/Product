@@ -6,7 +6,7 @@ services:
     ##### TEST #####
     ################
     api_test:
-        build: ./apidocker/master
+        build: ./apidocker
         image: api:master
 
         depends_on:
@@ -56,7 +56,7 @@ services:
     ##### STABLE #####
     ##################
     api:
-        build: ./apidocker/master
+        build: ./apidocker
         image: api:master
 
         volumes:
