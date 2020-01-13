@@ -2,10 +2,14 @@
 
 Server & Docker & AWS & DB Team 폴더입니다.
 
+<br>
+
 ## Folder 규칙
 ### 각 분야 별로 폴더 생성
   - AWS, DB, Docker 폴더를 생성하겠습니다.
   - 각 분야 별 팀원들은 각 폴더의 README.md를 작성해주세요. 
+
+<br>
 
 ## Branch 규칙
 - 각 팀원이 구현할 기능들로 Branch를 생성하도록 하겠습니다.
@@ -13,6 +17,8 @@ Server & Docker & AWS & DB Team 폴더입니다.
 - pr 권한은 추후 수정 예정
 - master에 merge된 remote branch는 스스로 제거합니다.
 - 해당 기능에 대해 추가로 개발할 것이 있다면 merge 된 branch를 사용하지 말고 새로 생성하여 사용합니다.
+
+<br>
 
 ## Commit Message 규칙
 ### 형식
