@@ -4,8 +4,9 @@ import * as ejs from 'ejs';
 import express, { NextFunction, Request, Response } from 'express';
 import createError from 'http-errors';
 import { join } from 'path';
-import productBase from './product/productBase';
-import main from './router/main';
+import checkRouter from './check';
+import productRouter from './product';
+import mainRouter from './router';
 
 const app = express();
 
@@ -19,8 +20,9 @@ app.set('view engine', 'ejs');
 app.engine('html', ejs.renderFile);
 
 // router 세팅
-app.use('/', main);
-app.use('/product', cors(), productBase);
+app.use('/', mainRouter);
+app.use('/check', checkRouter);
+app.use('/product', cors(), productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

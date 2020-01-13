@@ -2,9 +2,9 @@ import { NextFunction, Request, Response, Router } from 'express';
 import * as path from 'path';
 import { callApp } from './callApp.service';
 
-const productBase = Router();
+const productRouter = Router();
 
-productBase.get('/', (req: Request, res: Response, next: NextFunction) => {
+productRouter.get('/', (req: Request, res: Response, next: NextFunction) => {
     if (!req.query.title) {
         return res
             .status(200)
@@ -13,7 +13,7 @@ productBase.get('/', (req: Request, res: Response, next: NextFunction) => {
     console.log(req.query);
 });
 
-productBase.get('/search', async (req: Request, res: Response, next: NextFunction) => {
+productRouter.get('/search', async (req: Request, res: Response, next: NextFunction) => {
     if (!req.query.title) {
         return res.send('Error!! There is no Query String');
     }
@@ -21,4 +21,4 @@ productBase.get('/search', async (req: Request, res: Response, next: NextFunctio
     return res.status(200).json(result);
 });
 
-export default productBase;
+export default productRouter;
