@@ -15,5 +15,11 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install -y nodejs
 
 # Open Host Port
-# nginx port
-EXPOSE 80
+# express port
+EXPOSE 3000
+
+# database port
+# EXPOSE 33060
+
+# superdocker port
+# EXPOSE 31111

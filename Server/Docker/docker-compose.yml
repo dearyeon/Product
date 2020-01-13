@@ -5,15 +5,15 @@ services:
     ################
     ##### TEST #####
     ################
-    api_test:
-        build: ./apidocker
-        image: api:master
+    super_test:
+        build: ./superdocker
+        image: super:master
 
         depends_on:
             - db_test
             - front_test
         volumes:
-            - ./apidocker/test/ExpressJS-Study:/home/api
+            - ./superdocker/test/ExpressJS-Study:/home/api
 
         ports:
             - "30200:3000"
