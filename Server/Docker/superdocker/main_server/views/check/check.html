@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Check</title>
-    <style>
-        body {
-            padding: 15px;
-        }
-        pre {
-            background-color: lightgray;
-        }
-    </style>
+    <link rel="stylesheet" href="check.css">
 </head>
 <body>
     <h2 id="this-page-is-for-supervising">This page is for Supervising</h2>
@@ -19,22 +12,29 @@
     <p><br></br></p>
     <h3 id="db">DB</h3>
     <p>
-        <button>Check</button>
-        <pre>
-            <code class="lang-bash"></code>
-        </pre>
+        <button id="db_button">Check</button>
+    </p>
+    <p>
+        <code id="db_code" class="lang-bash "></code>
     </p>
     <h3 id="api">API</h3>
     <ul>
         <li>11st</li>
     </ul>
-    <pre>
-        <code class="lang-bash" style="background-color: lightgray;"></code>
-    </pre>
+    <p>
+        <button id="11st_button">Check</button>
+    </p>
+    <p>
+        <code id="11st_code" class="lang-bash "></code>
+    </p>
     <ul>
         <li>joongna</li>
     </ul>
-    <pre>
-        <code class="lang-bash" style="background-color: lightgray;"></code>
-    </pre>
+    <p>
+        <button id="joongna_button">Check</button>
+    </p>
+    <p>
+        <code id="joongna_code" class="lang-bash "></code>
+    </p>
+    <script src="./check.js"></script>
 </body>
