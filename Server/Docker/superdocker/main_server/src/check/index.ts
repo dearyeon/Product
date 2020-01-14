@@ -4,7 +4,7 @@ import * as path from 'path';
 const checkRouter = Router();
 
 checkRouter.get('/', (req: Request, res: Response, next: NextFunction) => {
-    res.sendFile(path.join(__dirname, '../../views/router/check.html'));
+    res.sendFile(path.join(__dirname, '../../views/check/check.html'));
 });
 
 export default checkRouter;
