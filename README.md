@@ -71,8 +71,8 @@ Git Ignore 파일도 따로 운용할 예정이며,
 
 - 각 팀별 저장소에서 -> 본 저장소로 pull request 할 경우
   - Merge 권한은 각 팀장들에게 있습니다.
-  - 각 팀별 Pull Request 시 **reviewer**는 3개 팀 팀장 + PM 으로 지정해주세요
+  - 각 팀별 Pull Request 시 **reviewer**는 나머지 2개 팀 팀장 + PM 으로 지정해주세요
   - 해당 Pull Request에 **assignee** 는 팀 전체를 대상으로 합니다.
-  - reviewer 4명 중 3명 이상의 인원이 확인하고 승인(approve) 했을 시에 Merge
+  - reviewer 전원이 확인하고 승인(approve) 했을 시에 Merge 합니다.
   
 > 추가적인 규칙들은 진행 중에 업데이트 하도록 하겠습니다.
