@@ -1,19 +1,19 @@
 /** 사이트 코드
- *  + 'AA' : 중고나라
- *  + 'AB' : 셀잇
- *  + 'AC' : 당근마켓
- *  + 'AD' : 번개장터
- *  + 'AE' : 헬로마켓
+ * + BeonGae: 001
+ * + JoongGo: 002
+ * + Daangn: 003
+ * + SellIt: 004
+ * + Hello: 005
  */
-export type SiteCode = JoongGo | SellIt | Daangn | BeonGae | Hello;
+export type SiteCode = BeonGae | JoongGo | Daangn | SellIt | Hello;
 
-/** JoonGo : 중고나라 */
-type JoongGo = 'AA';
-/** SellIt : 셀잇 */
-type SellIt = 'AB';
-/** Daangn : 당근마켓 */
-type Daangn = 'AC';
 /** BeonGae : 번개장터 */
-type BeonGae = 'AD';
+type BeonGae = '001';
+/** JoonGo : 중고나라 */
+type JoongGo = '002';
+/** Daangn : 당근마켓 */
+type Daangn = '003';
+/** SellIt : 셀잇 */
+type SellIt = '004';
 /** Hello : 헬로마켓 */
-type Hello = 'AE';
+type Hello = '005';
