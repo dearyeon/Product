@@ -3,7 +3,6 @@ const key_list = ['db', '11st', 'joongna'];
 const button_list = key_list.map(key =>
     document.getElementById(`${key}_button`).addEventListener('click', e => {
         const message = key_to_fn[key];
-        console.log(message);
         document.getElementById(`${key}_code`).textContent = message;
     }),
 );

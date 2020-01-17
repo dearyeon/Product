@@ -10,14 +10,13 @@ productRouter.get('/', (req: Request, res: Response, next: NextFunction) => {
             .status(200)
             .sendFile(path.join(__dirname, '../../views/product/productBase.html'));
     }
-    console.log(req.query);
 });
 
 productRouter.get('/search', async (req: Request, res: Response, next: NextFunction) => {
-    if (!req.query.title) {
+    if (!req.query.title || typeof req.query.title !== 'string') {
         return res.send('Error!! There is no Query String');
     }
-    const result = await callApp(req.query);
+    const result = await callApp({ search_word: req.query.title });
     return res.status(200).json(result);
 });
 

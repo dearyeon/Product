@@ -1,13 +1,9 @@
-import { ProductRequest } from './Interface/productRequest.interface';
-var api_11st = require('../../../test_api/11st/dist/product_search/src/index.js');
-var api_joongna = require('../../../test_api/joongna/dist/product_search/src/index.js');
+import { ProductListRequest, ProductListResponse } from '../../Common';
+var a000 = require('../../../API/dist/a000/product_list');
 
-export const callApp = async (data: ProductRequest) => {
+export const callApp = async (data: ProductListRequest) => {
     try {
-        const result = await Promise.all([
-            api_11st.index(data.title),
-            api_joongna.index(data.title),
-        ]);
+        const result: ProductListResponse[] = await a000.index(data);
         return result;
     } catch (err) {
         throw new Error(err);
