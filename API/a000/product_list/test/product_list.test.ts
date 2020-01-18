@@ -1,7 +1,7 @@
 import { makeQuery } from '../src/scrap.component';
 import { APIkey } from '../../option';
 import { responseMapping } from '../src/responseMapping';
-import { SiteResponseDetail } from '../interfaces/SiteResponse.interface';
+import { SiteResponseDetail } from '../../interfaces/SiteResponse.interface';
 
 describe('Init Test', () => {
     it('Hello Test', () => {
@@ -28,27 +28,11 @@ describe('Product List Test', () => {
     it('responseMapping function Test', () => {
         const output_test = responseMapping(input_test);
         expect(output_test).toEqual({
-            siteName: '11번가',
-            productName: 'ProductName',
-            price: 10000,
-            seller: 'Seller',
-            images: [
-                'ProductImage100',
-                'ProductImage110',
-                'ProductImage120',
-                'ProductImage130',
-                'ProductImage140',
-                'ProductImage150',
-                'ProductImage170',
-                'ProductImage200',
-                'ProductImage250',
-                'ProductImage270',
-                'ProductImage300',
-                'ProductImage',
-            ],
-            rating: 3,
-            commentNum: 100,
-            productLink: 'DetailPageUrl',
+            id: '',
+            site_code: '000',
+            title: 'ProductName',
+            price: '10000',
+            thumbnail: 'ProductImage100',
         });
     });
 });

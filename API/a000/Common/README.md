@@ -1,6 +1,6 @@
 ## 현재 버전
 
--   version : 1.0.0
+-   version : 1.1.1
 -   author: IMRaccoon
 
 <br>
@@ -17,3 +17,12 @@
 -   Product List
     -   Request
     -   Response
+
+<br>
+
+## 변동사항
+
+-   v.1.1.x
+    -   Product List Response, Product Detail Response 프론트 요구사항 반영
+    -   Site Code 추가: 11번가 테스트 전용
+    -   Check Linke Response 추가

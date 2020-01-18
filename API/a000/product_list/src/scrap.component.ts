@@ -1,8 +1,8 @@
 import * as iconv from 'iconv-lite';
 import { parseStringPromise } from 'xml2js';
 import { APIkey } from '../../option';
-import { SiteResponse, SiteResponseDetail } from '../interfaces/SiteResponse.interface';
-import { requestService } from '../request.service';
+import { SiteResponse, SiteResponseDetail } from '../../interfaces/SiteResponse.interface';
+import { requestService } from './request.service';
 import { responseMapping } from './responseMapping';
 
 export const scrapComponent = async (keyWord: string) => {
@@ -13,6 +13,7 @@ export const scrapComponent = async (keyWord: string) => {
     const product_detail_list: SiteResponseDetail[] =
         product_list.ProductSearchResponse.Products[0].Product;
     const mapping_to_form = product_detail_list.map(responseMapping);
+    console.log(mapping_to_form);
     return mapping_to_form;
 };
 
