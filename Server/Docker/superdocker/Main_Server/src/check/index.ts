@@ -16,9 +16,9 @@ checkRouter.get('/db', async (req: Request, res: Response, next: NextFunction) =
 checkRouter.get('/11st', async (req: Request, res: Response, next: NextFunction) => {
     const result: CheckLinkResponse = await elevenst.index();
     if (result.isSuccess) {
-        return res.send('Successfully connected');
+        return res.status(200).send('Successfully connected');
     }
-    return res.send(result.error);
+    return res.status(500).send(result.error);
 });
 
 checkRouter.get('/joongna', (req: Request, res: Response, next: NextFunction) => {

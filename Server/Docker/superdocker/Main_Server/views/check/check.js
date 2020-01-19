@@ -10,6 +10,13 @@ $(document).ready(() => {
 const checkServer = key => {
     $.ajax({
         url: key,
-        success: res => $(`#${key}_code`).text(res),
+        success: res => {
+            $(`#${key}_code`).text(res);
+            $(`#${key}_button`).css('background-color', 'LightGreen');
+        },
+        error: err => {
+            $(`#${key}_code`).text(err.responseText);
+            $(`#${key}_button`).css('background-color', 'red');
+        },
     });
 };
