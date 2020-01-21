@@ -12,5 +12,5 @@ create table product_list (
     primary key(id)
 );
 
-select * from product_list;
 alter table product_list convert to charset utf8;
+select * from product_list;

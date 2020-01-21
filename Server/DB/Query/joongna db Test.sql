@@ -13,3 +13,4 @@ etc varchar(50)
 );
 
 alter table joongnatest convert to charset utf8;
+select * from joongnatest;
