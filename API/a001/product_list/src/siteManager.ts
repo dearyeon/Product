@@ -1,12 +1,7 @@
 import * as request from 'request-promise';
-
-interface parserFrame {
-    list: {
-        name: string;
-        location: string;
-        pid: string;
-    }[];
-}
+import { parserFrame } from '../../interfaces/SiteRequest.interface';
+import { responseMapping, responseMappingDetail } from './responseMapping';
+import { SiteResponseList } from '../../interfaces/SiteResponse.interface';
 
 async function BunjangList(q: string, page: number) {
     const list_headers = {
@@ -20,7 +15,9 @@ async function BunjangList(q: string, page: number) {
     };
     const response = await request.get(list_headers);
     const parser: parserFrame = JSON.parse(response);
-    console.log(parser.list[0]);
+    const content = parser.list.map(res => responseMapping(res));
+    //console.dir(content, { depth: 3 });
+    return content;
 }
 
 async function BunjangDetail(pid: string) {
@@ -36,5 +33,5 @@ async function BunjangDetail(pid: string) {
     console.dir(parser, { depth: 5 });
 }
 
-//BunjangList('모니터', 5);
-BunjangDetail('97378657');
+BunjangList('모니터', 5);
+//BunjangDetail('97378657');

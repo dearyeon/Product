@@ -9,14 +9,14 @@
 export type SiteCode = Elevenst | BeonGae | JoongGo | Daangn | SellIt | Hello;
 
 /** Elevenst 11번가(test 전용) */
-type Elevenst = '000';
+export type Elevenst = '000';
 /** BeonGae : 번개장터 */
-type BeonGae = '001';
+export type BeonGae = '001';
 /** JoonGo : 중고나라 */
-type JoongGo = '002';
+export type JoongGo = '002';
 /** Daangn : 당근마켓 */
-type Daangn = '003';
+export type Daangn = '003';
 /** SellIt : 셀잇 */
-type SellIt = '004';
+export type SellIt = '004';
 /** Hello : 헬로마켓 */
-type Hello = '005';
+export type Hello = '005';
