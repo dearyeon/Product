@@ -1,7 +1,7 @@
 import * as request from 'request-promise';
 import { parserFrame } from '../../interfaces/SiteRequest.interface';
 import { responseMapping, responseMappingDetail } from './responseMapping';
-import { SiteResponseList } from '../../interfaces/SiteResponse.interface';
+import { SiteResponseDetail } from '../../interfaces/SiteResponse.interface';
 
 async function BunjangList(q: string, page: number) {
     const list_headers = {
@@ -29,9 +29,11 @@ async function BunjangDetail(pid: string) {
         },
     };
     const response = await request.get(detail_headers);
-    const parser = JSON.parse(response);
-    console.dir(parser, { depth: 5 });
+    const parser: SiteResponseDetail = JSON.parse(response);
+    const content = responseMappingDetail(parser, pid);
+    //console.dir(content, { depth: 5 });
+    return content;
 }
 
 BunjangList('모니터', 5);
-//BunjangDetail('97378657');
+BunjangDetail('97378657');

@@ -10,9 +10,12 @@ export const responseMapping = (input: SiteResponseList): ProductListResponse =>
     thumbnail: input.product_image,
 });
 
-export const responseMappingDetail = (input: SiteResponseDetail): ProductDetailResponse => ({
+export const responseMappingDetail = (
+    input: SiteResponseDetail,
+    pid: string,
+): ProductDetailResponse => ({
     site_code: '001',
-    origin_url: '',
+    origin_url: `https://api.bunjang.co.kr/api/1/product/${pid}/detail_info.json`,
     title: input.item_info.name,
     price: parseInt(input.item_info.price, 10) || -1,
     date: new Date(input.item_info.update_time * 1000).toLocaleDateString(),
