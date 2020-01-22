@@ -1,5 +1,6 @@
 show databases;
 use joongna_test;
+show tables;
 
 create table joongnatest (
 id integer not null auto_increment primary key,
@@ -13,4 +14,4 @@ etc varchar(50)
 );
 
 alter table joongnatest convert to charset utf8;
-select * from joongnatest;
+select * from joongnatest where name like "%아이유%" and site = "joongna";

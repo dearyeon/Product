@@ -1,7 +1,8 @@
 show databases;
+create database kj_product;
 use kj_product;
 show tables;
-drop table product_list;
+-- drop table product_list;
 
 create table product_list (
 	id integer not null auto_increment,
