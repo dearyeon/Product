@@ -8,6 +8,7 @@ import "../style/ProductContents.scss"
 class SiteTileComponent extends Component {
     render() {
         const { site_code, title, price, origin_url, detail, location, shipPrice } = this.props.data
+        console.log(site_code)
         return (
             <>
                 <div className="productMain">

@@ -18,8 +18,9 @@ import {
 
 const site_code = "000";
 
-function Home() {
+const Home = () => {
     const options = {
+        activeClasses: 'active',
         sectionClassName: 'section',
         anchors: ['', ''],
         scrollBar: false,
@@ -29,13 +30,13 @@ function Home() {
         <SectionsContainer {...options}>
             <div className="App">
                 <Section>
-                    <Header container="main-search-bar-container" className="section">
+                    <Header container="main-search-bar-container">
                         <SearchBar />
                         <img src={WordCloud} alt="" style={{ marginTop: "160px", marginBottom: "60px" }} />
                     </Header>
                 </Section>
                 <Section>
-                    <ProductsContainer id="recentProducts" className="section">
+                    <ProductsContainer id="recentProducts">
                         <h1>최근에 등록한 매물</h1>
                         <SiteProductList site_code={site_code} main_flag={true}></SiteProductList>
                     </ProductsContainer>
@@ -45,14 +46,12 @@ function Home() {
     );
 }
 
-function Products() {
+const Products = () => {
     return (
         <div className="App" >
             <Header container="search-bar-container">
                 <SearchBar />
             </Header>
-
-            {/* <ProductDetail></ProductDetail> */}
             <ProductsContainer>
                 <SiteTitle site_code={site_code}></SiteTitle>
                 <SiteProductList site_code={site_code} main_flag={false}></SiteProductList>
@@ -61,6 +60,16 @@ function Products() {
     )
 }
 
+const ProductDetailPage = ({ match }) => {
+    return (
+        <div className="App" >
+            <Header container="search-bar-container">
+                <SearchBar />
+            </Header>
+            <ProductDetail productID={match.params.ProductID} />
+        </div >
+    )
+}
 class TmpApp extends Component {
     render() {
         return (
@@ -69,6 +78,7 @@ class TmpApp extends Component {
                     <Route path="/Products">
                         <Products />
                     </Route>
+                    <Route path="/Product/:ProductID" component={ProductDetailPage} />
                     <Route path="/">
                         <Home />
                     </Route>

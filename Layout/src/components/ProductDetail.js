@@ -1,22 +1,27 @@
 import React, { Component } from "react"
 import ProductContents from "./ProductContents"
+import axios from "axios"
 
-const productDetailJson = {
-    "site_code": "000",
-    "image": "img",
-    "title": "아이폰 팝니다 @@@",
-    "price": "900000",
-    "origin_url": "https://naver.com",
-    "detail": "아이폰 뭐시기뭐시기 중고 S급 팝니다<br>직거래<br>광진구 가능\n",
-    "date": "2020-01-01",
-    "location": "경상북도 구미시 원평2동",
-    "shipPrice": "무료배송",
-}
+
 class ProductDetail extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            res: []
+        }
+    }
+    componentDidMount = () => {
+        this.getProducts()
+    }
+    getProducts = async () => {
+        const productDetailUrl = `http://127.0.0.1:3002/Product/Detail/${this.props.productID}`
+        const res = await axios.get(productDetailUrl)
+        this.setState({ res: res.data })
+    }
     render() {
         return (
             <>
-                <ProductContents data={productDetailJson} />
+                <ProductContents data={this.state.res} />
             </>
         )
     }
