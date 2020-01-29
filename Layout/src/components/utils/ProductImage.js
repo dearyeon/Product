@@ -3,11 +3,9 @@ import defaultImage from "../../static/default_photo.jpg"
 
 class ImageComponent extends Component {
     render() {
-        let { src } = this.props
-        const { className } = this.props
-        src = src === "" ? defaultImage : src
+        const { src, className } = this.props
         return (
-            <img src={src} alt="nono" className={className} />
+            <img src={src || defaultImage} alt="nono" className={className} />
         )
     }
 }
