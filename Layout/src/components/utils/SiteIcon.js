@@ -1,11 +1,11 @@
 import React, { Component } from "react"
 import cx from "classnames"
+import "../../style/ImageComponent.scss"
 class SiteIcon extends Component {
     constructor(props) {
         super(props)
         const { site_code } = this.props
         this.siteIcon = this.selectSiteIcon(site_code)
-
     }
     selectSiteIcon = (site_code) => {
         switch (site_code) {
@@ -22,7 +22,7 @@ class SiteIcon extends Component {
             case "005":
                 return "IconHelloMarket"
             default:
-                return ""
+                return "IconKonkuk"
         }
     }
     render() {

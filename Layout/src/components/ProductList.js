@@ -3,7 +3,7 @@ import ProductListItem from "./ProductListItem";
 import { css } from "@emotion/core";
 import Loader from "react-spinners/MoonLoader";
 //https://www.davidhu.io/react-spinners/
-import "./ProductList.scss";
+import "../style/ProductList.scss";
 const override = css`
   display: block;
   margin: 0 auto;

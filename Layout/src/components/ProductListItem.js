@@ -7,7 +7,7 @@ class ProductListItem extends Component {
     return (
       <div className="product-list-item">
         <div className="product-image">
-          <img src={productImage || productDefaultImage} alt="product-image" />
+          <img src={productImage || productDefaultImage} alt="" />
         </div>
         <div className="product-name">{productName}</div>
         <div className="product-price">{productPrice}원</div>
