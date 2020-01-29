@@ -15,7 +15,6 @@ class SiteProductList extends Component {
         if (!main_flag) {
             window.addEventListener("scroll", debounce(this.handleRequestScroll, 1000))
         }
-        console.log(main_flag)
     }
     getProducts = async (main_flag) => {
         let res = ""
@@ -28,15 +27,14 @@ class SiteProductList extends Component {
     }
     handleRequestScroll = () => {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            // debounce(this.getProducts, 1000)
             this.getProducts()
         }
     }
     render() {
         const productItem = Object.values(this.state.res).map((item, index) => {
-            const { productImage, productName, productPrice } = item;
+            const { productImage, productName, productPrice, productID } = item;
             return (
-                <ProductListItem key={index} productImage={productImage} productName={productName} productPrice={productPrice}></ProductListItem>
+                <ProductListItem key={index} productImage={productImage} productName={productName} productPrice={productPrice} productID={productID}></ProductListItem>
             )
         });
         return (

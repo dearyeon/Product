@@ -9,7 +9,7 @@ class SearchBar extends Component {
         keyword: ""
     }
 
-    InputKeyword = () => {
+    inputKeyword = () => {
         const keyword = document.getElementById("keyword").value
         this.setState({
             keyword
@@ -19,13 +19,16 @@ class SearchBar extends Component {
     render() {
         return (
             <>
-                <SiteIcon site_code="" />
-                <Link to={`/keyword=${this.state.keyword}`}>
-                    <div className="search-bar">
-                        <input type="text" id="keyword" className="search-bar-input" placeholder="원하시는 상품을 입력하세요." />
-                        <img src={Search} alt="" className="search-icon" onClick={this.InputKeyword} />
-                    </div>
+                <Link to={"/"}>
+                    <SiteIcon site_code="" />
                 </Link>
+                <div className="search-bar">
+                    <input type="text" id="keyword" className="search-bar-input" placeholder="원하시는 상품을 입력하세요." onChange={this.inputKeyword} />
+                    <Link to={`/keyword=${this.state.keyword}`}>
+                        <img src={Search} alt="" className="search-icon" />
+                    </Link>
+                </div>
+
             </>
         )
     }
