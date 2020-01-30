@@ -1,4 +1,5 @@
 import request from 'request-promise';
+import { SiteResponseDetail } from './interfaces/SiteResponse.interface';
 
 const hello = async (q: string, page: number = 1) => {
     const option = {
@@ -16,7 +17,7 @@ const hello = async (q: string, page: number = 1) => {
     const res = await request(option);
     const parser = JSON.parse(res);
 
-    const Product = parser.list.map((value: any) => {
+    const Product = parser.list.map((value: SiteResponseDetail) => {
         const item: ProductScrap = {
             siteName: 'HelloMarket',
             productName: value.item.title,
@@ -42,7 +43,7 @@ interface ProductScrap {
     siteName: string;
     productName: string;
     price: number;
-    images?: string[];
+    images?: string;
     commentNum?: number;
     productLink: string;
 }
