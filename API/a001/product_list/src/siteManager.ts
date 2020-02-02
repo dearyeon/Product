@@ -16,7 +16,7 @@ async function BunjangList(q: string, page: number) {
     const response = await request.get(list_headers);
     const parser: parserFrame = JSON.parse(response);
     const content = parser.list.map(res => responseMapping(res));
-    //console.dir(content, { depth: 3 });
+    console.dir(content, { depth: 3 });
     return content;
 }
 
@@ -31,9 +31,9 @@ async function BunjangDetail(pid: string) {
     const response = await request.get(detail_headers);
     const parser: SiteResponseDetail = JSON.parse(response);
     const content = responseMappingDetail(parser, pid);
-    //console.dir(content, { depth: 5 });
+    console.dir(content, { depth: 5 });
     return content;
 }
 
-BunjangList('모니터', 5);
+//BunjangList('모니터', 5);
 BunjangDetail('97378657');
